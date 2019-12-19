@@ -3,4 +3,5 @@ Git is free software d.
 Git has a mutable index called stage.
 git tracks changes
 56
-create a new branch
+Creating a new branch is quick AND simple.
+
