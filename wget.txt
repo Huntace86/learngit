@@ -1,0 +1,58 @@
+一、介绍
+Linux系统下载文件工具，用来从指定的URL下载文件
+
+ 
+
+二、使用方法
+1
+2
+3
+4
+5
+6
+7
+8
+语法:wget [参数] [URL地址]
+选项:
+-c接着下载没下载完的文件
+-b启动后转入后台执行
+-P指定下载目录
+-O变更下载文件名
+--ftp-user --ftp-password使用FTP用户认证下载
+参数:指定的文件下载URL地址
+　　
+
+三、案例
+1.使用wget下载单个文件
+
+1
+wget http://cn2.php.net/distributions/php-5.6.13.tar.gz
+
+2.下载并以不同的文件名保存　
+
+1
+wget -o php5.6.tar.gz http://cn2.php.net/distributions/php-5.6.13.tar.gz
+
+3.使用wget断点续传
+
+1
+wget -c http://cn2.php.net/distributions/php-5.6.13.tar.gz
+ 
+
+4.使用wget后台下载
+
+1
+wget -b  http://cn2.php.net/distributions/php-5.6.13.tar.gz
+tail -f wget-log   #查看文件下载进度
+ 
+
+5.使用wget下载到指定目录
+
+1
+wget http://cn2.php.net/distributions/php-5.6.13.tar.gz -P Download/
+　　
+
+6.使用wget用户名和密码认证下载
+
+1
+wget --ftp-user=FTP_usser_name  --ftp-password=User_password  FTP_ADDRESS
