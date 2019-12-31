@@ -1,0 +1,65 @@
+一、介绍
+tar 命令用于将一个或多个文件和目录打包。压缩和解压文件。tar本身不具有压缩功能，是调用压缩功能实现的。
+
+二、使用方法
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+语法：tar [选项][文件]
+选项：
+-c 建立新的压缩文件
+-d 记录文件的差别
+-r 添加文件到已经压缩的文件
+-u 添加改变了和现有的文件到已经存在的压缩文件
+-x 从压缩的文件中提取文件
+-t 显示压缩文件的内容
+-z 支持gzip解压文件
+-j 支持bzip2解压文件
+-Z 支持compress解压文件
+-v 显示操作过程
+-k 保留原有文件不覆盖
+-m 保留文件不被覆盖
+-W 确认压缩文件的正确性
+ 
+
+三、案例　
+1.将root目录打包，并保存为root.bak.tar
+
+1
+[root@ping ~]# tar -cf root.bak.tar  /root/
+2.将boot目录打包，并压缩为boot.bak.gz
+
+1
+2
+3
+[root@ping ~]# tar -zcf boot.bak.gz /boot
+[root@ping ~]# ls -lh boot.bak.gz
+-rw-r--r-- 1 root root 32M 2月  23 15:56 boot.bak.gz
+3.将boot目录打包，并压缩为boot.bak.bz2
+
+1
+2
+3
+[root@ping ~]# tar -cjf boot.bak.bz2 /boot/
+[root@ping ~]# ls -lh boot.bak.bz2
+-rw-r--r-- 1 root root 32M 2月  23 15:58 boot.bak.bz2
+4.解压文件到指定目录
+
+1
+2
+3
+[root@ping ~]# tar -xf boot.bak.bz2 -C /tmp/
+[root@ping ~]# ls /tmp/
+boot
