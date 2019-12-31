@@ -1,2 +1,6 @@
 1.git push failed:
-	https://blog.csdn.net/u012145252/article/details/80628451
+	1.1 print：fatal: refusing to merge unrelated histories 
+	    cause: two independent repository cannot merge
+	    solution: 	git pull origin master --allow-unrelated-histories
+       			git push origin master:master
+	    reference: https://blog.csdn.net/u012145252/article/details/80628451
